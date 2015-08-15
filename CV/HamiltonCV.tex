@@ -1,0 +1,252 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+% (c) 2012 Joshua J Hamilton <joshamilton@gmail.com>
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{lastpage}
+\usepackage{etaremune}
+\usepackage[margin=1in]{geometry}
+
+% Define custom date format
+\usepackage{datetime}
+\newdateformat{myDate}{\monthname[\THEMONTH], \THEYEAR}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+%\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.25in}
+%\setlength{\paperheight}{11in}
+%\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+%\setlength{\textheight}{9in}
+%\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-0.1in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{
+  \setlength{\FrameSep}{\outerbordwidth}
+\setlength{\fboxsep}{0pt}
+\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.262in][l]{\large #1} \vphantom{p\^{E}}}}}}
+  }
+  \vspace{-5pt}
+}
+
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{6in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+% Place information in the footer
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[L]{Hamilton CV}
+\fancyfoot[C]{\thepage\ of \pageref{LastPage}}
+\fancyfoot[R]{Last revised: \myDate\today}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\footskip{0.5in}
+}
+\pagestyle{plain}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+\begin{tabular*}{6.5in}{l@{\extracolsep{\fill}}r}
+\textbf{\Large Joshua J. Hamilton}  \\
+Department of Bacteriology \\
+University of Wisconsin-Madison & \emph{E-mail}: jjhamilton2@wisc.edu \\
+5552 Microbial Sciences Building & \emph{Office}: 608-890-2858 \\
+1550 Linden Drive & \emph{Cell}: 913-269-7789 \\
+Madison, WI 53706 & \emph{Web}: http://mcmahonlab.wisc.edu/people.php \\
+\end{tabular*}
+\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education and Academic Positions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item
+		\ressubheading{University of Wisconsin-Madison (UW-Madison)}{Madison, WI}{Postdoctoral Associate, Department of Bacteriology}{2014-present}
+		\begin{itemize}
+			\resitem{Advisor: Katherine D. McMahon}
+		\end{itemize}
+	\item
+		\ressubheading{UW-Madison}{Madison, WI}{Ph.D., Chemical Engineering}{2009-2014}
+		\begin{itemize}
+			\resitem{Advisor: Jennifer L. Reed}
+		\end{itemize}
+	\item
+		\ressubheading{Case Western Reserve University (CWRU)}{Cleveland, OH}{B.S., Chemical Engineering}{2005-2009}
+		\begin{itemize}
+			\resitem{\emph{Summa cum laude}}
+		\end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Honors and Awards}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{-2pt}
+\begin{center}\begin{tabular*}{6.1in}{l@{\extracolsep{\fill}}r}
+%	\multicolumn{2}{c}{Best Poster Award, COBRA 2014\cftdotfill{\cftdotsep}2014}\\	
+	\multicolumn{2}{c}{National Science Foundation, Graduate Research Fellowship \cftdotfill{\cftdotsep}2010-2014}\\
+%	\multicolumn{2}{c}{National Science Foundation, Graduate Research Fellowship (Honorable Mention) \cftdotfill{\cftdotsep}2009}\\
+%	\multicolumn{2}{c}{U.S. Department of Energy Office of Science, Graduate Research Fellowship (Finalist) \cftdotfill{\cftdotsep}2009}\\	
+	\multicolumn{2}{c}{UW-Madison, Bird, Stewart, and Lightfoot Distinguished Graduate Fellowship\cftdotfill{\cftdotsep}2009-2010}\\	
+%	\multicolumn{2}{c}{CWRU, Robert J. Adler Award\cftdotfill{\cftdotsep}2009}\\	
+%	\multicolumn{2}{c}{CWRU, Albert W. Smith Award\cftdotfill{\cftdotsep}2009}\\	
+%	\multicolumn{2}{c}{CWRU, Outstanding Supplemental Instruction Leader\cftdotfill{\cftdotsep}2008}\\			
+%	\multicolumn{2}{c}{Tau Beta Pi, Ohio Alpha Chapter\cftdotfill{\cftdotsep}2006}\\		
+\vphantom{E}
+\end{tabular*}\end{center}\vspace*{-16pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{etaremune}[itemsep=-2pt]
+	\item \textbf{Hamilton JJ}, Calixto Contreras M, and JL Reed. (2015) \emph{Thermodynamics and H$_2$ Transfer in a Methanogenic, Syntrophic Community.} PLoS Computational Biology. 11(7): e1004364. doi:     10.1371/journal.pcbi.1004364.
+	\item Vinay-Lara E, \textbf{Hamilton JJ}, Stahl B, Broadbent JR, Reed JL, and JL Steele. (2014) \emph{Genome-Scale Reconstruction of Metabolic Networks of Lactobacillus casei ATCC 334 and 12A}. PLoS ONE. 9(11): e110785. doi:10.1371/journal.pone.0110785.
+	\item \textbf{Hamilton JJ} and JL Reed. (2014) \emph{Software Platforms to Facilitate Reconstructing Genome-Scale Metabolic Networks}. Environmental Microbiology. 16(1): 49.59. doi:10.1111/1462-2920.12312.
+	\item \textbf{Hamilton JJ}, Dwivedi V, and JL Reed. (2013) \emph{Quantitative Assessment of Thermodynamic Constraints on the Solution Space of Genome-Scale Metabolic Models.} Biophysical Journal. 105(2): 512-522. doi:10.1016/j.bpj.2013.06.011.
+	\item \textbf{Hamilton JJ} and JL Reed. (2012) \emph{Identification of Functional Differences in Metabolic Networks Using Comparative Genomics and Constraint-Based Models}. PLoS ONE. 7(4): e34670. doi:10.1371/journal.pone.0034670.
+\end{etaremune}
+
+%\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Conference Presentations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{etaremune}[itemsep=-2pt]
+	\item \textbf{Hamilton JJ} and JL Reed. \emph{Thermodynamics and H$_2$ Transfer in a Methanogenic,
+Syntrophic Community.} COBRA 2014: 3rd Conference on Constraint-Based Reconstruction and Analysis, Charlottesville, VA, May 2014.
+	\item \textbf{Hamilton JJ} and JL Reed. \emph{Identification of Functional Differences in Cyanobacterial Metabolic Networks Using Constraint-Based Models.} American Society of Microbiology (ASM) General Meeting, Denver, CO, May 2013.
+	\item \textbf{Hamilton JJ}, Dwivedi V, and JL Reed. \emph{Thermodynamics-Based Flux-Balance Analysis: Incorporation of Thermodynamic and Metabolomic Data Into Genome-Scale Constraint-Based Models.} American Institute of Chemical Engineers Annual Meeting, Pittsburgh, PA, October 2012.
+	\item \textbf{Hamilton JJ} and JL Reed. \emph{Comparison of Microbial Metabolic Networks to Guide Background Strain Selection.} American Chemical Society National Meeting, San Diego, CA, March 2012.
+	\item  \textbf{Hamilton JJ} and JL Reed. \emph{Genome Alignment and Pair-Wise Comparison of Microbial Metabolic Networks Identifies Novel Potential Drug Targets.} American Institute of Chemical Engineers Annual Meeting, Minneapolis, MN, October 2011.
+\end{etaremune}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\resheading{Invited Seminars}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Poster Presentations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{enumerate}
+	\item \textbf{Hamilton JJ}, Bendall M, del Rio TG, Bertilsson S, Malmstrom R, Stepanauskas R, Tringe S, Woyke T, and KD McMahon. \emph{Ecological Niches of Freshwater Actinobacteria Revealed through Comparative Genomics and Reverse Ecology} Molecular Genetics of Bacteria and Phages Meeting, Madison, WI. July 2015.
+	\item \textbf{Hamilton JJ}, Bendall M, del Rio TG, Bertilsson S, Malmstrom R, Stepanauskas R, Tringe S, Woyke T, and KD McMahon. \emph{Ecological Niches of Freshwater Actinobacteria Revealed through Comparative Genomics and Reverse Ecology} Gordon Research Conference on Applied and Environmental Microbiology, Mount Holyoke College, South Hadley, MA. July 2015.
+	\item \textbf{Hamilton JJ}, He S, Bendall M, del Rio TG, Bertilsson S, Malmstrom R, Stepanauskas R, Tringe S, Woyke T, and KD McMahon. \emph{Ecological Niches of Uncultivated Freshwater Phyla Revealed Through Comparative Genomics.} UMX: 10th Annual Department of Energy Joint Genome Institute User Meeting, Walnut Creek, CA. March 2015.
+	\item \textbf{Hamilton JJ} and JL Reed. \emph{Thermodynamics and H$_2$ Transfer in a Methanogenic,
+Syntrophic Community.} COBRA 2014: 3rd Conference on Constraint-Based Reconstruction and Analysis, Charlottesville, VA. May 2014.
+	\item \textbf{Hamilton JJ} and JL Reed. \emph{Identification of Functional Differences in Metabolic Networks Using Comparative Genomics and Constraint-Based Models.} Hougen Symposium, UW-Madison, Madison, WI. May 2012.	
+\end{enumerate}
+\end{comment}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Teaching Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item \ressubheading{Environmental Microbiology}{UW-Madison}{Guest Lecturer}{Spring 2015}
+	\item \ressubheading{Computational Tools for Analyzing Microbial Metabolism}{ASM General Meeting}{Workshop Instructor}{May 2013}
+	\item \ressubheading{Biochemical Engineering}{UW-Madison}{Guest Lecturer}{Fall 2011, Fall 2012}
+	\item  \ressubheading{Biochemical Engineering}{UW-Madison}{Teaching Assistant}{Fall 2011}
+	\item \ressubheading{Mass Transfer Operations}{UW-Madison}{Teaching Assistant}{Spring 2011}
+	\item \ressubheading{Organic Chemistry}{CWRU}{Supplemental Instructor}{Fall 2008}
+	\item \ressubheading{Chemistry of Materials}{CWRU}{Supplemental Instructor}{Fall 2007, Spring 2008, Spring 2009}
+\end{itemize}
+
+%\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Mentoring Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item  \ressubheading{Summer Undergraduate Research Experience }{UW-Madison}{Postdoctoral Mentor}{Summer 2015}
+	\item  \ressubheading{CBE Independent Study}{UW-Madison}{Graduate Student Mentor}{Spring 2012, Summer 2012, Fall 2013}
+	\item \ressubheading{Khorana Program}{UW-Madison}{Graduate Student Mentor}{Summer 2011}
+	\item \ressubheading{REU in Chemical and Biological Engineering}{UW-Madison}{Graduate Student Mentor}{Summer 2010}
+\end{itemize}
+%\end{comment}
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Academic and Professional Service}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item Referred papers for the following journals:
+		\begin{itemize}
+			\item Biochemical Engineering Journal	
+ 			\item PLoS ONE
+		\end{itemize}
+%	\item Member of the following scholarly and professional societies:
+%	\item \ressubheading{New Educators' Orientation}{UW-Madison}{Student Volunteer}{Fall 2011-Spring 2014}
+\end{itemize}
+\end{comment}
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{References}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item Katherine D. McMahon\
+		Professor\\
+		Department of Bacteriology \\
+		Department of Civil and Environmental Engineering \\
+		University of Wisconsin-Madison \\
+		E-mail: tmcmahon@engr.wisc.edu \\
+		Phone: 608-890-2836 \\
+
+	\item Jennifer L. Reed\\
+		Associate Professor\\
+		Department of Chemical and Biological Engineering \\
+		University of Wisconsin-Madison \\
+		E-mail: reed@engr.wisc.edu \\
+		Phone: 608-262-0188 \\
+
+	\item Brian F. Pfleger\\
+		Associate Professor\\
+		Department of Chemical and Biological Engineering \\
+		University of Wisconsin-Madison \\
+		E-mail: pfleger@engr.wisc.edu \\
+		Phone: 608-890-1940 \\
+
+	\item Christos T. Maravelias\\
+		Professor\\
+		Department of Chemical and Biological Engineering \\
+		University of Wisconsin-Madison \\
+		E-mail: christos@engr.wisc.edu \\
+		Phone: 608-265-9026 \\
+\end{itemize}
+\end{comment}
+\end{document}
