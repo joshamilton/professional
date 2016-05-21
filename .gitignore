@@ -3,5 +3,9 @@
 
 # But not these files
 !.gitignore
+!ConferencePosters/
+!ConferencePosters/*
+!ConferenceTalks/
+!ConferenceTalks/*
 !CV/HamiltonCV.pdf
 !CV/HamiltonCV.tex
