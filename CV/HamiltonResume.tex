@@ -1,0 +1,254 @@
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+%
+% (c) 2012 Joshua J Hamilton <joshamilton@gmail.com>
+%This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+
+\documentclass[letterpaper,10pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{lastpage}
+\usepackage{etaremune}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Define custom date format
+\usepackage{datetime}
+\newdateformat{myDate}{\monthname[\THEMONTH] \THEYEAR}
+
+%-----------------------------------------------------------
+%Edit these values as you see fit
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{gray}{0.75}  % Outer background color of title bars (0 = black, 1 = white)
+\definecolor{shadecolorB}{gray}{0.93}  % Inner background color of title bars
+
+
+%-----------------------------------------------------------
+%Margin setup
+
+%\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+%\setlength{\oddsidemargin}{-0.25in}
+%\setlength{\paperheight}{11in}
+%\setlength{\paperwidth}{8.5in}
+\setlength{\tabcolsep}{0in}
+%\setlength{\textheight}{9in}
+%\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-0.75in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+
+%-----------------------------------------------------------
+%Custom commands
+\newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
+\newcommand{\resheading}[1]{\vspace{8pt}
+  \parbox{\textwidth}{
+  \setlength{\FrameSep}{\outerbordwidth}
+\setlength{\fboxsep}{0pt}
+\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[7.262in][l]{\large #1} \vphantom{p\^{E}}}}}}
+  }
+  \vspace{-5pt}
+}
+
+% Itemized headings w/ two lines
+\newcommand{\ressubheading}[4]{
+\begin{tabular*}{7in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+% Itemized headings w/ one line
+\newcommand{\ressubheadingSingular}[2]{
+\begin{tabular*}{7in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+		#1 & \textit{#2} \\
+%		\textit{#3} & \textit{#4} \\
+\end{tabular*}\vspace{-6pt}}
+
+
+% Item formats
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+%\renewcommand{\labelitemiii}{$\diamond$}
+%\renewcommand{\labelitemiv}{$\ast$}
+
+%-----------------------------------------------------------
+% Place information in the footer
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[L]{Hamilton R\'{e}sum\'{e}}
+\fancyfoot[C]{\thepage\ of \pageref*{LastPage}}
+\fancyfoot[R]{Last revised: \myDate\today}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength\footskip{0.5in}
+}
+\pagestyle{plain}
+
+%-----------------------------------------------------------
+
+\begin{document}
+
+{
+\centering 
+\textbf{\Large Joshua J. Hamilton}  \\
+\large{San Francisco Bay Area, CA, USA} \,
+\large{joshamilton@gmail.com} \,
+\large{913-269-7789} \\
+\large{https://www.linkedin.com/in/joshamilton/}
+%\large{\emph{Location}: San Francisco, CA, USA} \\
+%\large{\emph{E-mail}: joshamilton@gmail.com} \,
+%\large{\emph{Phone}: 913-269-7789} \,
+%\large{\emph{Web}: \url{https://www.linkedin.com/in/joshamilton/}} \\
+\par
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Professional Summary}
+\begin{itemize}
+\item
+Results-oriented data scientist harnessing complex data to improve the human condition, with eight years of experience beyond the PhD. I built and led the data science group at Federation Bio, where I was responsible for designing, leading, and executing data science projects from discovery to early clinical development. Effective leader and clear communicator with the ability to prioritize competing objectives and align projects accordingly.
+%	\item Broadly-trained bioinformatician with nine years experience in modeling biological networks and analysis of multi-omic datasets from environmental, engineered, and host-associated microbiomes. Expertise in integrating omics datasets with metabolic network models to identify targets for manipulating microbiome function. Experience in individual and collaborative development of scientific software in Python, R, and the Unix shell using Git/Github.
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item
+		\ressubheadingSingular{\textbf{Data Scientist I, Data Scientist II, Sr Data Scientist}, Federation Bio, Inc}{2019-present}
+		\begin{itemize}
+			\item Established, built, and led data science group. Managed research associates and scientists. Mentored cross-functionally.
+			\item Led design and execution of data science efforts across the portfolio, including data analysis, bioinformatics, software development, data management, data engineering, and cloud computing for programs in microbiome, immunology, and oncology
+			\item Served as technical expert in microbiome science, and partnered with CMC, translational medicine, clinical science, and regulatory affairs to advance discovery programs into clinical development
+			\item Authored documents to support regulatory filings
+			\item Identified, screened, selected, and managed contractors and CROs
+			\item Led internal and external cross-functional teams in development and qualification of bioanalytical assays
+			\item Designed and built bioinformatics pipelines for genome assembly, genome annotation, and metagenomic profiling, using Nextflow, Docker, R, and Python
+			\item Built and optimized cloud computing infrastructure, powered by AWS
+			\item Launched laboratory informatics program by implementing Benchling ELN/LIMS and establishing best practices for data management and documentation
+		\end{itemize}
+		
+	\item
+		\ressubheadingSingular{\textbf{Postdoctoral Research Associate}, UW-Madison}{2014-2019}
+		\begin{itemize}
+
+			\item Identified molecular interactions within microbial communities, using a combination of experimental and computational methods, including: 
+				\begin{itemize}
+				\item Experimental: high-throughput experimental screens, metabolomics, genomics, and transcriptomics
+				\item Computational: bioinformatics (genome-centric metagenomics and metatranscriptomics), metabolic modeling, and differential equations modeling
+				\end{itemize}
+			\item Led development of genomic, transcriptomic, and metabolomic assays, authored laboratory protocols, and identified external service providers and collaborators
+			\item Mentored graduate students in bioinformatics and software development, and fostered adoption of good data management practices among laboratory members and collaborators
+%			\item Guided graduate students in development of microbiome-based processes for production of value-added chemicals from biomass and treatment of wastewater
+			\item Participated in build out of anaerobic microbiology lab, including anaerobic chambers and liquid handling robots
+% Dept of Biochemistry (2018-2019)
+%			\item Developed a chemically-defined medium that supports growth of over 20 human microbiome species
+%			\item Guided development of community metabolic models to inform process design and drive biological discovery
+%			\item Identified interspecies interactions within microbiomes using top-down approaches, including high-throughput experimental screens, time-series data, and differential equations modeling
+%			\item Carried out high-throughput screens of synthetic human gut microbiome communities to identify context-independent interactions
+%			\item Deciphered metabolic mechanisms of interspecies interaction using computational modeling and genomic, transcriptomic, and metabolomic data
+%			\item Designed experiments to shift microbial community composition by changing nutritional environment
+%			\item Organized first annual Madison Microbiome Meeting
+%			\item Trained colleagues in best practices for analysis of bioinformatic data
+% Dept of Bacteriology (2014-2017)
+%			\item Analyzed metagenomic and metatranscriptomic datasets to reconstruct microbial metabolism
+%			\item Predicted  interspecies interactions within microbiomes using bottom-up approaches, including genome-centric metagenomics and metatranscriptomics and computational metabolic modeling
+%			\item Defined data model for a custom laboratory information management system, and coordinated data and metadata collection for 
+
+%			\item Developed new algorithm for taxonomy assignment using curated, ecosystem-specific databases
+%			\item Coordinated data and metadata collection and management for GEODES, an interdisciplinary project studying microbially-mediated carbon cycling in freshwater environments
+%			\item Implemented version-controlled computational workflows using Git, Python, R, and the Unix shell and performed collaborative software development on GitHub
+%			\item Integrated metabolic reconstruction, network modeling and transcriptomics to reveal ecophysiology of uncultivated bacteria				
+
+%			\item Developed new algorithm for improved species-level taxonomic assignment within microbiomes
+%			\item Defined data model for my research group's custom laboratory information management system and fostered adoption of good data management practices among research group members
+%			\item Wrote successful fellowship applications for graduate and post-doctoral studies
+%			\item Presented research findings via oral and poster presentation at scientific research conferences
+%			\item Published in peer-reviewed journals
+%			\item Mentored undergraduate and graduate students to completion and publication of research projects
+			\item Developed algorithm for improved species-level taxonomic assignment within microbiomes
+
+%			\item Collaborated with an interdisciplinary team to characterize a novel light-driven proton-pumping opsin protein
+		\end{itemize}
+	\item
+		\ressubheadingSingular{\textbf{Graduate Research Assistant}, UW-Madison}{2009-2014}		
+		\begin{itemize}
+			\item Published multiple metabolic reconstructions and genome-scale metabolic models
+			\item Developed algorithm to identify functional differences between microbes using comparative genomics and metabolic modeling
+			\item Incorporated thermodynamic information into metabolic models using chemoinformatic group contribution methods
+%			\item Developed algorithm to identify functional differences between metabolic networks using comparative genomics and constraint-based methods
+%			\item Incorporated thermodynamic information into flux-balance models using chemoinformatic group contribution methods
+%			\item Incorporated thermodynamic information into metabolic models using chemoinformatic group contribution methods
+%			\item Constructed omics-informed, thermodynamic flux-balance model of an anaerobic microbiome
+%			\item Wrote successful fellowship applications for graduate and post-doctoral studies
+%			\item Presented research findings via oral and poster presentation at scientific research conferences
+%			\item Published in peer-reviewed journals
+%			\item Mentored undergraduate and graduate students to completion and publication of research projects
+		\end{itemize}
+\end{itemize}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Skills}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item Soft skills: leadership, cross-functional collaboration, communication, writing, presentations
+	\item Programming and Software Development: R, Python, Git, Github, Nextflow, Docker, AWS
+	\item Bioinformatics: genome assembly, genome annotation, metagenomic assembly and binning, metagenome profiling, 16S rRNA sequencing, amplicon sequencing
+%	\item Omics: 16S rRNA sequencing, amplicon sequencing, genomics, transcriptomics, RNA-Seq, metabolomics, metagenomics, metatranscriptomics
+%	\item Laboratory: anaerobic microbiology, bacterial cell culture, PCR
+	\item Drug development: drug discovery, assay development, preclinical research, translational research, early clinical development
+	%clinical trials
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item
+		\ressubheading{University of Wisconsin-Madison (UW-Madison)}{Madison, WI}{Ph.D., Chemical Engineering}{2014}
+	\item
+		\ressubheading{Case Western Reserve University (CWRU)}{Cleveland, OH}{B.S., Chemical Engineering}{2009}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Selected Patents and Publications}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{etaremune}[itemsep=-2pt]
+	 \item Swem LR, Kumar P, Bhalla A, Tripathi SA, Parmar A, \textbf{Hamilton JJ}, Brumbaugh AR, Ricci DP, Layman HRW, Ciglar AM, Berleman J, Walters Z, Jacoby K, Youngblut ND, Grauer A, Drabant Conley E, Romasko H (2023) \emph{Microbial consortia}. \href{https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20230165913}{US Patent Application Publication No. US-20230165913-A1}.
+	 \item Swem L, Ricci D, Brumbaugh AR, Cremin J, \textbf{Hamilton JJ}, Tripathi S, Wong L, Romasko H, Bracken R, Drabant Conley E. (2023) \emph{Microbial consortia for the treatment of disease}. \href{https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/20230125976}{US Patent Application Publication No. US-20230125976-A1}.
+	\item Ricci D, \textbf{Hamilton JJ}, Tripathi S, Brumbaugh A, Cremin J, Ou N, Layman H, and L Swem. (2022) \emph{Creation of Rationally Designed and Metabolically Active Microbiome Consortia for Treatment of Enteric Hyperoxaluria.} Kidney International Reports. 7(2): S204-S205. \href{https://www.kireports.org/article/S2468-0249(22)00490-9/fulltext}{doi:10.1016/j.ekir.2022.01.490}.
+%	\item Feng J, Qian Y, Zhou Z, Ertmer S, Vivas EI, Lan F, \textbf{Hamilton JJ}, Rey FE, Anantharaman K, OS Venturelli. (2022) \emph{Polysaccharide utilization loci in Bacteroides determine population fitness and community-level interactions}. 30(2) P200-215.E12. Cell Host \& Microbe. \href{https://www.cell.com/cell-host-microbe/fulltext/S1931-3128(21)00577-1}{doi:10.1016/j.chom.2021.12.006}.
+	\item Clark RL, Connors B, Stevenson DM, Hromada SE, \textbf{Hamilton JJ}, Amador-Noguez D, and OS Venturelli. (2021) \emph{Design of synthetic human gut microbiome assembly and function}. Nature Communications. 12: 3254. \href{https://www.nature.com/articles/s41467-021-22938-y}{doi:10.1038/s41467-021-22938-y}.
+	\item Scarborough MJ, \textbf{Hamilton JJ}, Erb EA, Donohue TJ, and DR Noguera. (2020) \emph{Diagnosing and Predicting Mixed-Culture Fermentations with Unicellular and Guild-Based Metabolic Models}. mSystems. 5(5):e00755-20. \href{https://doi.org/10.1128/mSystems.00755-20}{doi:10.1128/mSystems.00755-20}.
+	\item Cao X*, \textbf{Hamilton JJ*}, and OS Venturelli. (2019) \emph{Understanding and Engineering Distributed Biochemical Pathways in Microbial Communities}. Biochemistry. 58(2): 94-107. \href{https://doi.org/10.1021/acs.biochem.8b01006}{doi:10.1021/acs.biochem.8b01006}.
+%	\item Dwulit-Smith JR, \textbf{Hamilton JJ}, Stevenson DM, He S, Oyserman BO, Moya-Flores F, Amador-Noguez D, McMahon KD, and KT Forest. (2018) \emph{acI Actinobacteria Assemble a Functional Actinorhodopsin with Natively-synthesized Retinal}. Applied and Environmental Microbiology. 84(24): e01678-18. \href{https://doi.org/10.1128/AEM.01678-18}{doi:10.1128/AEM.01678-18}.
+	\item Scarborough MJ, Lawson CE, \textbf{Hamilton JJ}, Donohue TJ, and DR Noguera. (2018) \emph{Metatranscriptomic and Thermodynamic Insights into Medium-Chain Fatty Acid Production Using an Anaerobic Microbiome}. mSystems. 3(6): e00221-18. \href{https://doi.org/10.1128/mSystems.00221-18}{doi:10.1128/mSystems.00221-18}.
+	\item Rohwer RR, \textbf{Hamilton JJ}, Newton, RJ, and KD McMahon. (2018) \emph{TaxAss: Leveraging a Custom Freshwater Database Achieves Fine-Scale Taxonomic Resolution}. mSphere. 3(5): e00327-18. \href{https://doi.org/10.1128/mSphere.00327-18}{doi:10.1128/mSphere.00327-18}.
+%	\item Garcia SL, Buck M, \textbf{Hamilton JJ}, Wurzbacher C, Grossart HP, McMahon KD, and A Eiler. (2018) \emph{Model Communities Hint at Promiscuous Metabolic Linkages between Ubiquitous Free-Living Freshwater Bacteria}. mSphere. 3(3): e00202-18. \href{https://doi.org/10.1128/mSphere.00202-18}{doi:10.1128/mSphere.00202-18}.
+	\item \textbf{Hamilton JJ}, Garcia SL, Brown BS$^\dagger$, Oyserman BO, Moya F, Bertilsson S, Malmstrom RR, Forest KT, and KD McMahon. (2017) \emph{Metabolic Network Analysis and Metatranscriptomics Reveals Auxotrophies and Nutrient Sources of the Cosmopolitan Freshwater Microbial Lineage acI}. mSystems. 2(4): e00091-17. \href{https://doi.org/10.1128/mSystems.00091-17}{doi:10.1128/mSystems.00091-17}.
+	\item Lawson CE, Wu S, Bhattacharjee AS, \textbf{Hamilton JJ}, McMahon KD, Goel R, and DR Noguera. (2017) \emph{Metabolic network analysis reveals microbial community interactions in anammox granules}. Nature Communications. 8: 15416. \href{https://www.nature.com/articles/ncomms15416}{doi:10.1038/ncomms15416}.
+	\item \textbf{Hamilton JJ}, Calixto Contreras M$^\dagger$, and JL Reed. (2015) \emph{Thermodynamics and H$_2$ Transfer in a Methanogenic, Syntrophic Community.} PLoS Computational Biology. 11(7): e1004364. \href{http://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1004364}{doi:10.1371/journal.pcbi.1004364}.
+%	\item Vinay-Lara E, \textbf{Hamilton JJ}, Stahl B, Broadbent JR, Reed JL, and JL Steele. (2014) \emph{Genome-Scale Reconstruction of Metabolic Networks of Lactobacillus casei ATCC 334 and 12A}. PLoS ONE. 9(11): e110785. \href{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0110785}{doi:10.1371/journal.pone.0110785}.
+	\item \textbf{Hamilton JJ} and JL Reed. (2014) \emph{Software platforms to facilitate reconstructing genome-scale metabolic networks}. Environmental Microbiology. 16(1): 49-59. \href{http://onlinelibrary.wiley.com/doi/10.1111/1462-2920.12312/abstract}{doi:10.1111/1462-2920.12312}.
+	\item \textbf{Hamilton JJ}, Dwivedi V$^\dagger$, and JL Reed. (2013) \emph{Quantitative Assessment of Thermodynamic Constraints on the Solution Space of Genome-Scale Metabolic Models.} Biophysical Journal. 105(2): 512-522. \href{http://www.cell.com/biophysj/abstract/S0006-3495%2813%2900685-1}{doi:10.1016/j.bpj.2013.06.011}.
+	\item \textbf{Hamilton JJ} and JL Reed. (2012) \emph{Identification of Functional Differences in Metabolic Networks Using Comparative Genomics and Constraint-Based Models}. PLoS ONE. 7(4): e34670. \href{http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0034670}{doi:10.1371/journal.pone.0034670}.
+\end{etaremune}
+* indicates equal contribution \\
+$\dagger$ indicates an undergraduate student author
+
+\end{document}
